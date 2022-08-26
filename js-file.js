@@ -67,7 +67,9 @@ function playAgain(){
     play.addEventListener("click", () => {;
     yourWins = 0;
     compWins = 0;
-    document.querySelectorAll(".game").forEach(el => el.setAttribute('disabled', false));
+    document.querySelector(".rock").disabled = false;
+    document.querySelector(".paper").disabled = false;
+    document.querySelector(".scissors").disabled = false;
     roundResult.textContent = "";
     finalResult.textContent = "";
     results.removeChild(play);
