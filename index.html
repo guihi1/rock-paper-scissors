@@ -4,60 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rock, Paper and Scissors!</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fjalla One">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DynaPuff">
+    <script src="js-file.js" defer></script>
 </head>
 <body>
-    <script>
-        function getComputerChoice(){
-            let randomNum = Math.random();
-            if (randomNum <= 0.33){
-                return "rock";
-            } else if (randomNum <= 0.66){
-                return "paper";
-            } else {
-                return "scissors";
-            }
-        }
-        function playRound(playerSelection, computerSelection){
-            let playerLower = playerSelection.toLowerCase();
-            if (playerLower === "rock" && computerSelection === "paper"){
-                return "You lose! Paper beats rock";
-            } else if (playerLower === "rock" && computerSelection === "scissors"){
-                return "You win! Rock beats scissors";
-            } else if (playerLower === "paper" && computerSelection === "scissors"){
-                return "You lose! Scissors beats paper";
-            } else if (playerLower === "paper" && computerSelection === "rock"){
-                return "You win! Paper beats rock";
-            } else if (playerLower === "scissors" && computerSelection === "rock"){
-                return "You lose! Rock beats scissors";
-            } else if (playerLower === "scissors" && computerSelection === "paper"){
-                return "You win! Scissors beat paper";
-            } else {
-                return "Draw!";
-            }
-        }
-        function game(){
-            let wins = 0;
-            let losses = 0;
-            let rounds;
-            for(let i = 0; i < 5; i++){
-                playerSelection = prompt("Choose rock, paper or scissors");
-                rounds = playRound(playerSelection, getComputerChoice());
-                console.log(rounds);
-                if (rounds.slice(4, 7) === "win"){
-                    wins++;
-                } else if(rounds.slice(4, 7) === "los"){
-                    losses++;
-                }
-            }
-            if (wins > losses){
-                return "Victory";
-            } else if (wins < losses){
-                return "Defeat";
-            } else {
-                return "Draw";
-            }
-        }
-    </script>
+    <h1>Rock, paper and scissors!</h1>
+    <h2>A best of 5 match</h2>
+    <h2>Choose one!</h2>
+    <div class="container">
+    <button class="rock game">Rock</button>
+    <button class="paper game">Paper</button>
+    <button class="scissors game">Scissors</button>
+    </div>
+    <div class="results"></div>
 </body>
 </html>
